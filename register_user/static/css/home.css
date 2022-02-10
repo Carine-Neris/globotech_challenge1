@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* Main */
+
+* {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  background: linear-gradient(
+    rgba(52, 72, 250, 0.568),
+    rgba(243, 234, 234, 0.815)
+  );
+}
+
+/* Home */
+
+button {
+  padding: 1rem;
+  background: #0357f3;
+  color: #ffffff;
+  border: none;
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+#btn-register {
+  position: fixed;
+  left: 43%;
+  top: 60%;
+}
+
+#btn-logout {
+  position: fixed;
+  left: 43%;
+  top: 85%;
+}
+
+#btn-login {
+  position: fixed;
+  left: 43%;
+  top: 60%;
+}
+
+#btn-emloyees {
+  position: absolute;
+  left: 43%;
+  top: 70%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+#logo {
+  position: absolute;
+  bottom: 50%;
+  left: 41%;
+}
+
+img {
+  max-width: 50%;
+}

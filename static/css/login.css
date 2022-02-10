@@ -1,0 +1,11 @@
+.login-form {
+  position: fixed;
+  left: 43%;
+  top: 50%;
+}
+
+#submit{
+  padding: 13px;
+  margin-top: 20px;
+  width: 12pc;
+}

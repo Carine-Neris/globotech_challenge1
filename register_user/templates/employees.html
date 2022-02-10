@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <h2>Funcionários</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for user in object_list %}
+      <tr>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }} </td>
+        <td>{{ user.email }}</td>
+        <td>
+          <a href="{% url 'update' pk=user.pk %}">
+            <button type="button" class="btn btn-info">Editar</button>
+          </a>
+        </td>
+      </tr>
+        {% empty %}
+        <tr>
+          <td>Nenhum Usuario Cadastrado</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'home' %}">
+    <button id="btn-back" type="button">
+      Voltar
+    </button>
+  </a>
+</div>
+{% endblock content %}

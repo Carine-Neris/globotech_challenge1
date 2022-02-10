@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section>
+  <div id="logo">
+    <img src="{% static 'images/globo1.png' %}" alt="logo" />
+  </div>
+  {% if user.is_authenticated %}
+    <div id="btn-register">
+      <a href="{% url 'register' %}">
+        <button type="submit">
+          Cadastrar Funcionário
+        </button>
+      </a>
+    </div>
+
+    <div id="btn-emloyees">
+      <a href="{% url 'list_employees' %}">
+        <button type="submit">
+          Listar Funcionários Cadastrados
+        </button>
+      </a>
+    </div>
+
+    
+    <div id="btn-logout">
+      <a href="{% url 'logout'%}?next={{request.path}}">
+        <button type="submit">
+          Logout
+        </button>
+      </a>
+    </div>
+  {% else %}
+    <a href="{% url 'login' %}">
+      <button id="btn-login" type="submit">
+        fazer login
+      </button>
+    </a>
+  {% endif %}
+</section>
+
+{% endblock %}

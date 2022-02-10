@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Cadastro de Funcionário</h1>
+
+<div id="register-form">
+  <form  method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    {{ form|crispy }}
+
+    <button id="btn_register" type="submit">
+      Registrar
+    </button>
+    <a href="{% url 'home' %}">
+      <button type="button">
+        Voltar
+      </button>
+    </a>
+  </form>
+</div>
+{% endblock %}

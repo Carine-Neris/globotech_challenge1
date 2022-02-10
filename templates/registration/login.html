@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div id="logo">
+  <img src="{% static 'images/globo1.png' %}" alt="logo" />
+</div>
+<div class="login-form">
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <a href="{% url 'login' %}">
+      <button id="submit" type="submit">
+        Login
+      </button>
+    </a>
+    <input type="hidden" name="home" value="{{ home }}" />
+</form>
+</div>  
+{% endblock %}
